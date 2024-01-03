@@ -34,7 +34,9 @@ return require('packer').startup(function(use)
 		  {'neovim/nvim-lspconfig'},
 		  {'williamboman/mason.nvim'},
 		  {'williamboman/mason-lspconfig.nvim'},
-
+          {'mfussenegger/nvim-jdtls'},
+          {'mfussenegger/nvim-dap'},
+          {'rcarriga/nvim-dap-ui'},
       
 		  {'hrsh7th/nvim-cmp'},
 		  {'hrsh7th/cmp-buffer'},
@@ -51,6 +53,7 @@ return require('packer').startup(function(use)
 
   use  ('ThePrimeagen/harpoon')
   use ('tpope/vim-fugitive')
+  use ('lukas-reineke/virt-column.nvim')
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
