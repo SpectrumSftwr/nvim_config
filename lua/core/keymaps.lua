@@ -5,7 +5,6 @@ vim.g.maplocalleader= ' '
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.shiftround = true
-vim.opt.expandtab = true
 vim.opt.number=true
 vim.opt.numberwidth= 2
 vim.opt.relativenumber = true
@@ -26,4 +25,3 @@ vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
 
 vim.keymap.set('n', '<leader>p', "\"_dp")
-
