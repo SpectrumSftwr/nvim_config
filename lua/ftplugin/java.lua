@@ -11,7 +11,7 @@ local root_files = {
 
 local features = {
   -- change this to `true` to enable codelens
-  codelens = false,
+  codelens = true,
 
   -- change this to `true` if you have `nvim-dap`,
   -- `java-test` and `java-debug-adapter` installed
@@ -86,10 +86,10 @@ local function get_jdtls_paths()
     -- https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
     --
     -- This example assume you are using sdkman: https://sdkman.io
-    -- {
-    --   name = 'JavaSE-17',
-    --   path = vim.fn.expand('~/.sdkman/candidates/java/17.0.6-tem'),
-    -- },
+    {
+      name = 'JavaSE-17',
+      path = vim.fn.expand('~/.sdkman/candidates/java/17.0.0-tem'),
+    },
     -- {
     --   name = 'JavaSE-18',
     --   path = vim.fn.expand('~/.sdkman/candidates/java/18.0.2-amzn'),
@@ -136,14 +136,14 @@ local function jdtls_on_attach(client, bufnr)
   -- https://github.com/mfussenegger/nvim-jdtls#usage
   
   local opts = {buffer = bufnr}
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>gD", "<cmd> lua vim.lsp.buf.declaration()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>gd", "<cmd> lua vim.lsp.buf.definition()<CR>", opts)
   vim.keymap.set('n', '<A-o>', "<cmd>lua require('jdtls').organize_imports()<cr>", opts)
   vim.keymap.set('n', 'crv', "<cmd>lua require('jdtls').extract_variable()<cr>", opts)
   vim.keymap.set('x', 'crv', "<esc><cmd>lua require('jdtls').extract_variable(true)<cr>", opts)
   vim.keymap.set('n', 'crc', "<cmd>lua require('jdtls').extract_constant()<cr>", opts)
   vim.keymap.set('x', 'crc', "<esc><cmd>lua require('jdtls').extract_constant(true)<cr>", opts)
   vim.keymap.set('x', 'crm', "<esc><Cmd>lua require('jdtls').extract_method(true)<cr>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>gD", "<cmd> lua vim.lsp.buf.declaration()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>gd", "<cmd> lua vim.lsp.buf.definition()<CR>", opts)
 end
 
 local function jdtls_setup(event)
@@ -167,7 +167,7 @@ local function jdtls_setup(event)
   -- See: https://github.com/eclipse/eclipse.jdt.ls#running-from-the-command-line
   local cmd = {
     -- 💀
-    '/Users/juanmejia/jdk21/Contents/Home/bin/java',
+    'java',
 
     '-Declipse.application=org.eclipse.jdt.ls.core.id1',
     '-Dosgi.bundles.defaultStartLevel=4',
@@ -178,10 +178,9 @@ local function jdtls_setup(event)
     '-Xms1g',
     '--add-modules=ALL-SYSTEM',
     '--add-opens',
-    'java.base/java.util=ALL-UNNAMED',
-    '--add-opens',
-    'java.base/java.lang=ALL-UNNAMED',
-    
+    'java.base/java.util=ALL_UNNAMED',
+    '--add-opens', 
+    'java.base/java.lang=ALL_UNNAMED',
     -- 💀
     '-jar',
     path.launcher_jar,
@@ -208,6 +207,9 @@ local function jdtls_setup(event)
       configuration = {
         updateBuildConfiguration = 'interactive',
         runtimes = path.runtimes,
+        maven = {
+            globalSettings = '/Users/juanmejia/motioncore/maven/conf/settings.xml'
+        },
       },
       maven = {
         downloadSources = true,

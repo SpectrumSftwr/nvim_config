@@ -54,6 +54,7 @@ return require('packer').startup(function(use)
   use  ('ThePrimeagen/harpoon')
   use ('tpope/vim-fugitive')
   use ('lukas-reineke/virt-column.nvim')
+  use ('folke/tokyonight.nvim')
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
