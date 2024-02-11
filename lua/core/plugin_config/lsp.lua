@@ -18,14 +18,24 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {'tsserver', 'rust_analyzer', 'jdtls'},
+  ensure_installed = {'tsserver', 'rust_analyzer', 'jdtls', 'gopls'},
   handlers = {
     lsp_zero.default_setup,
     jdtls = lsp_zero.noop,
+	tsserver = function() 
+		require('lspconfig').tsserver.setup({
+			settings = {
+				completions = {
+					completeFunctionCalls = true
+				}
+			}
+		})
+	end,
     lua_ls = function()
       local lua_opts = lsp_zero.nvim_lua_ls()
       require('lspconfig').lua_ls.setup(lua_opts)
     end,
+	gopls = function() require('lspconfig').gopls.setup({}) end,
   }
 })
 
