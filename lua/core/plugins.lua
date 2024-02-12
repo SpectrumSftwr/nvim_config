@@ -20,7 +20,7 @@ return require('packer').startup(function(use)
   use {
     'nvim-lualine/lualine.nvim',							-- LUALINE FOR THAT NICE LINE AT THE BOTTOM
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-  } 
+  }
   use 'nvim-treesitter/nvim-treesitter'						-- TREESITTER FOR SYNTAX HIGHLIGHTING
   use {
     'nvim-telescope/telescope.nvim',						-- TELESCOPE FOR FUZZY FINDING
@@ -32,20 +32,18 @@ return require('packer').startup(function(use)
 	  requires = {
 		  -- LSP Support
 		  {'neovim/nvim-lspconfig'},
-		  {'nvim-java/nvim-java-test'}
+		  {'nvim-java/nvim-java-test'},
 		  {'williamboman/mason.nvim'},
 		  {'williamboman/mason-lspconfig.nvim'},
           {'mfussenegger/nvim-jdtls'},
           {'mfussenegger/nvim-dap'},
           {'rcarriga/nvim-dap-ui'},
-      
 		  {'hrsh7th/nvim-cmp'},
 		  {'hrsh7th/cmp-buffer'},
 		  {'hrsh7th/cmp-path'},
 		  {'saadparwaiz1/cmp_luasnip'},
 		  {'hrsh7th/cmp-nvim-lsp'},
 		  {'hrsh7th/cmp-nvim-lua'},
-
 		  -- Snippets
 		  {'L3MON4D3/LuaSnip'},
 		  {'rafamadriz/friendly-snippets'},
@@ -57,7 +55,11 @@ return require('packer').startup(function(use)
   use ('lukas-reineke/virt-column.nvim')		-- Adds the Virtual 80 line column (Just looks a bit nicer than default)
   use ('folke/tokyonight.nvim')					-- Tokyo Night Theme (VERY NICE)
   use ('christoomey/vim-tmux-navigator') 		-- Used for tmux and vim split window navigation
-
+  use  ('ThePrimeagen/harpoon')
+  use ('tpope/vim-fugitive')
+  use ('lukas-reineke/virt-column.nvim')
+  use ('folke/tokyonight.nvim')
+  use ('csexton/trailertrash.vim')
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then

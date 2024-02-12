@@ -154,6 +154,11 @@ _G.packer_plugins = {
     path = "/Users/juanmejia/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
     url = "https://github.com/rcarriga/nvim-dap-ui"
   },
+  ["nvim-java-test"] = {
+    loaded = true,
+    path = "/Users/juanmejia/.local/share/nvim/site/pack/packer/start/nvim-java-test",
+    url = "https://github.com/nvim-java/nvim-java-test"
+  },
   ["nvim-jdtls"] = {
     loaded = true,
     path = "/Users/juanmejia/.local/share/nvim/site/pack/packer/start/nvim-jdtls",
@@ -198,6 +203,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/juanmejia/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
+  },
+  ["trailertrash.vim"] = {
+    loaded = true,
+    path = "/Users/juanmejia/.local/share/nvim/site/pack/packer/start/trailertrash.vim",
+    url = "https://github.com/csexton/trailertrash.vim"
   },
   ["vim-fugitive"] = {
     loaded = true,
