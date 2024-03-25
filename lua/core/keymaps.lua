@@ -7,7 +7,7 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.shiftround = true
 vim.opt.number=true
-vim.opt.numberwidth= 2
+vim.opt.numberwidth= 3
 vim.opt.relativenumber = true
 
 vim.opt.hlsearch = false
@@ -35,12 +35,5 @@ vim.keymap.set('n', 'n', 'nzzzv')								-- when moving down in searching it sta
 vim.keymap.set('n', 'N', 'Nzzzv')								-- When moving up in searches it stays centered
 
 vim.keymap.set('n', '<leader>p', "\"_dp")						-- Dont remember rn....
-
-vim.keymap.set('n', 'mk', '<C-w>k')
-vim.keymap.set('n', 'mj', '<C-w>j')
-vim.keymap.set('n', 'mh', '<C-w>h')
-vim.keymap.set('n', 'ml', '<C-w>l')
-vim.keymap.set('n', '<leader>p', "\"_dp")
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
-
