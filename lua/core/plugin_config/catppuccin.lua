@@ -20,8 +20,12 @@
 --vim.o.background = "dark"
 --vim.cmd[[colorscheme catppuccin]]
 
-require("tokyonight").setup({
-    style="night",
-})
-vim.cmd.colorscheme 'tokyonight'
-vim.cmd("hi ColorColumn guibg='grey'")
+-- require("tokyonight").setup({
+--     style="night",
+-- })
+-- vim.cmd.colorscheme 'tokyonight'
+-- vim.cmd("hi ColorColumn guibg='grey'")
+--
+-- Default options:
+vim.o.background = "dark"
+vim.cmd("colorscheme gruvbox")

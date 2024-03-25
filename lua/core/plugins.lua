@@ -53,7 +53,8 @@ return require('packer').startup(function(use)
   use  ('ThePrimeagen/harpoon')					-- THE GREATEST OF ALL TIME
   use ('tpope/vim-fugitive')					-- Fugitive == GIT functionality
   use ('lukas-reineke/virt-column.nvim')		-- Adds the Virtual 80 line column (Just looks a bit nicer than default)
-  use ('folke/tokyonight.nvim')					-- Tokyo Night Theme (VERY NICE)
+  --use ('folke/tokyonight.nvim')					-- Tokyo Night Theme (VERY NICE)
+  use ('ellisonleao/gruvbox.nvim')
   use ('christoomey/vim-tmux-navigator') 		-- Used for tmux and vim split window navigation
   use  ('ThePrimeagen/harpoon')
   use ('tpope/vim-fugitive')
