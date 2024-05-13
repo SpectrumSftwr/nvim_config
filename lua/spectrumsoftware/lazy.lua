@@ -11,4 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("spectrumsoftware.plugins")
+require("lazy").setup({
+    {import = "spectrumsoftware.plugins"},
+    {import = "spectrumsoftware.plugins.lsp"},
+})

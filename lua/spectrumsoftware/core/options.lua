@@ -1,12 +1,11 @@
 vim.cmd("let g:netrw_liststyle = 3")
-
 -- use spaces for tab and whatnot
 vim.opt.expandtab=true
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.shiftround = true
 vim.opt.number=true
-vim.opt.numberwidth= 3
+vim.opt.numberwidth= 4
 vim.opt.relativenumber = true
 vim.opt.autoindent = true
 vim.opt.wrap = false
