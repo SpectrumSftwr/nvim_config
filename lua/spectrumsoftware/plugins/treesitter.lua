@@ -21,7 +21,7 @@ return {
                 "css", "csv", "gitignore", 
                 "html", "java", "javascript", 
                 "json", "sql", "tsx", 
-                "yaml", "xml" 
+                "yaml", "xml", "prisma"
             },
         })
     end,
